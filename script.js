@@ -439,6 +439,9 @@ function initializeWebsite() {
     setupSearch();
     setupFilters();
     setupAccessibility();
+    
+    // Set initial active navigation state
+    updateActiveNavLink();
 }
 
 // Initialize EmailJS
@@ -448,13 +451,6 @@ function initializeEmailJS() {
     emailjs.init('YOUR_PUBLIC_KEY');
 }
 
-function initializeWebsite() {
-    loadServices();
-    setupEventListeners();
-    setupSearch();
-    setupFilters();
-    setupAccessibility();
-}
 
 // Load and display services
 function loadServices() {
@@ -1224,6 +1220,41 @@ function scrollToSection(sectionId) {
     }
 }
 
+// Update active navigation link based on scroll position
+function updateActiveNavLink() {
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('.nav-link');
+    
+    let currentSection = '';
+    const scrollPosition = window.scrollY + 150; // Offset for better UX
+    
+    sections.forEach(section => {
+        const sectionTop = section.offsetTop;
+        const sectionHeight = section.offsetHeight;
+        
+        if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+            currentSection = section.getAttribute('id');
+        }
+    });
+    
+    // Update active class on navigation links
+    navLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href') === `#${currentSection}`) {
+            link.classList.add('active');
+        }
+    });
+}
+
+// Throttled scroll handler for better performance
+let scrollTimeout;
+function throttledScrollHandler() {
+    if (scrollTimeout) {
+        clearTimeout(scrollTimeout);
+    }
+    scrollTimeout = setTimeout(updateActiveNavLink, 10);
+}
+
 function updateBreadcrumb(items) {
     const breadcrumb = document.getElementById('breadcrumb');
     const html = items.map((item, index) => {
@@ -1260,6 +1291,9 @@ function setupEventListeners() {
             }
         });
     });
+    
+    // Update active navigation link on scroll (throttled for performance)
+    window.addEventListener('scroll', throttledScrollHandler);
     
     // Close modals when clicking outside
     document.addEventListener('click', function(e) {
