@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Motzz Laboratory - Professional Testing Services</title>
+    <meta name="description" content="Motzz Laboratory provides comprehensive testing services for agriculture, environmental, construction, dietary supplements, and microbiology. ISO 17025 certified laboratory in Phoenix, AZ.">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <h1>Motzz Laboratory</h1>
+                    <span class="tagline">Professional Testing Services</span>
+                </div>
+                <nav class="nav">
+                    <ul class="nav-list">
+                        <li><a href="#home" class="nav-link active">Home</a></li>
+                        <li><a href="#services" class="nav-link">Services</a></li>
+                        <li><a href="#about" class="nav-link">About</a></li>
+                        <li><a href="#contact" class="nav-link">Contact</a></li>
+                    </ul>
+                </nav>
+                <div class="header-actions">
+                    <button class="btn btn-primary" onclick="openGeneralQuoteForm()">
+                        <i class="fas fa-envelope"></i>
+                        Request Quote
+                    </button>
+                    <button class="mobile-menu-toggle" onclick="toggleMobileMenu()">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">Professional Laboratory Testing Services</h1>
+                <p class="hero-subtitle">Comprehensive testing for agriculture, environmental, construction, dietary supplements, and microbiology. ISO 17025 certified laboratory serving Arizona, Nevada, and California.</p>
+                <div class="hero-actions">
+                    <button class="btn btn-primary btn-large" onclick="scrollToSection('services')">View Services</button>
+                    <button class="btn btn-secondary btn-large" onclick="openGeneralQuoteForm()">Request Quote</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Search and Filter Section -->
+    <section class="search-section">
+        <div class="container">
+            <div class="search-container">
+                <div class="search-bar">
+                    <i class="fas fa-search"></i>
+                    <input type="text" id="searchInput" placeholder="Search tests, methods, or categories..." autocomplete="off">
+                    <div class="search-suggestions" id="searchSuggestions"></div>
+                </div>
+                <div class="filter-controls">
+                    <div class="filter-group">
+                        <label for="categoryFilter">Category:</label>
+                        <select id="categoryFilter">
+                            <option value="">All Categories</option>
+                            <option value="agriculture">Agriculture</option>
+                            <option value="environmental">Environmental</option>
+                            <option value="construction">Construction</option>
+                            <option value="dietary">Dietary</option>
+                            <option value="microbiology">Microbiology</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label for="turnaroundFilter">Turnaround:</label>
+                        <select id="turnaroundFilter">
+                            <option value="">Any Time</option>
+                            <option value="quick">Quick (1-3 days)</option>
+                            <option value="standard">Standard (4-7 days)</option>
+                            <option value="extended">Extended (8+ days)</option>
+                        </select>
+                    </div>
+                    <div class="view-toggle">
+                        <button class="view-btn active" data-view="grid" onclick="toggleView('grid')">
+                            <i class="fas fa-th"></i>
+                        </button>
+                        <button class="view-btn" data-view="list" onclick="toggleView('list')">
+                            <i class="fas fa-list"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="active-filters" id="activeFilters"></div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <div class="container">
+            <div class="section-header">
+                <h2>Our Testing Services</h2>
+                <p>Comprehensive laboratory testing services across multiple industries</p>
+            </div>
+            
+            <!-- Breadcrumb -->
+            <nav class="breadcrumb" id="breadcrumb">
+                <a href="#services">Services</a>
+            </nav>
+
+            <!-- Services Grid/List -->
+            <div class="services-container" id="servicesContainer">
+                <!-- Services will be dynamically loaded here -->
+            </div>
+
+            <!-- Loading State -->
+            <div class="loading" id="loading">
+                <div class="spinner"></div>
+                <p>Loading services...</p>
+            </div>
+
+            <!-- No Results -->
+            <div class="no-results" id="noResults" style="display: none;">
+                <i class="fas fa-search"></i>
+                <h3>No services found</h3>
+                <p>Try adjusting your search or filters</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>About Motzz Laboratory</h2>
+                    <p>Established in 2004, Motzz Laboratory is a minority and woman-owned testing laboratory providing comprehensive testing services across multiple industries. Our ISO 17025 certified facility serves clients throughout Arizona, Nevada, and California.</p>
+                    <p>We specialize in agricultural nutrient testing, environmental analysis, construction materials testing, dietary supplement analysis, and microbiology services. Our commitment to accuracy and quality is demonstrated through participation in multiple proficiency testing programs.</p>
+                </div>
+                <div class="certifications">
+                    <h3>Licenses & Accreditations</h3>
+                    <div class="cert-grid">
+                        <div class="cert-item">
+                            <i class="fas fa-certificate"></i>
+                            <span>ISO/IEC 17025: 2017</span>
+                        </div>
+                        <div class="cert-item">
+                            <i class="fas fa-shield-alt"></i>
+                            <span>AZ Department of Health Services</span>
+                        </div>
+                        <div class="cert-item">
+                            <i class="fas fa-leaf"></i>
+                            <span>AZ Department of Agriculture</span>
+                        </div>
+                        <div class="cert-item">
+                            <i class="fas fa-road"></i>
+                            <span>AZ Department of Transportation</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq">
+        <div class="container">
+            <div class="section-header">
+                <h2>Frequently Asked Questions</h2>
+                <p>Find answers to common questions about our testing services</p>
+            </div>
+            <div class="faq-grid">
+                <div class="faq-category">
+                    <h3><i class="fas fa-clock"></i> Turnaround & Timing</h3>
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFAQ(this)">
+                            <h4>How long does it take to get test results?</h4>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Turnaround times vary by test type. Most tests are completed within 3-7 business days. Rush services are available for urgent needs with 1-3 day turnaround. Contact us for specific timing on your required tests.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFAQ(this)">
+                            <h4>Do you offer rush services?</h4>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Yes, we offer rush services for urgent testing needs. Rush services typically provide results within 1-3 business days, depending on the test type. Additional fees may apply for rush services.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="faq-category">
+                    <h3><i class="fas fa-certificate"></i> Certifications & Quality</h3>
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFAQ(this)">
+                            <h4>What certifications does Motzz Laboratory have?</h4>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>We are ISO/IEC 17025: 2017 certified and licensed by the Arizona Department of Health Services, Arizona Department of Agriculture, and Arizona Department of Transportation. We participate in multiple proficiency testing programs to ensure accuracy.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFAQ(this)">
+                            <h4>How do you ensure test accuracy?</h4>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>We maintain strict quality control measures, participate in proficiency testing programs, and follow standardized testing protocols. Our ISO 17025 certification ensures our methods meet international standards for testing accuracy.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="faq-category">
+                    <h3><i class="fas fa-shipping-fast"></i> Sample Collection & Shipping</h3>
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFAQ(this)">
+                            <h4>Do you provide sample collection services?</h4>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Yes, we can provide sample collection services for many types of tests. We also offer consultation on proper sample collection techniques to ensure accurate results. Contact us to discuss your specific needs.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFAQ(this)">
+                            <h4>How should I prepare and ship samples?</h4>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Sample preparation varies by test type. We provide detailed collection instructions for each test. Samples should be properly labeled, packaged, and shipped according to our guidelines to maintain sample integrity.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="faq-category">
+                    <h3><i class="fas fa-map-marker-alt"></i> Service Areas & Coverage</h3>
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFAQ(this)">
+                            <h4>What areas do you serve?</h4>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>We primarily serve Arizona, Nevada, and California. Our laboratory is located in Phoenix, AZ, and we can accommodate shipping samples from other locations. Contact us to discuss your specific location and needs.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFAQ(this)">
+                            <h4>Do you serve residential and commercial clients?</h4>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Yes, we serve both residential and commercial clients. Our services are available to homeowners, farmers, construction companies, environmental consultants, and various other industries requiring laboratory testing.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="section-header">
+                <h2>Contact Us</h2>
+                <p>Get in touch with our team for testing services and support</p>
+            </div>
+            <div class="contact-content">
+                <div class="contact-form-section">
+                    <h3>Send us a Message</h3>
+                    <form id="contactForm" class="contact-form">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="contactFirstName">First Name *</label>
+                                <input type="text" id="contactFirstName" name="firstName" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="contactLastName">Last Name *</label>
+                                <input type="text" id="contactLastName" name="lastName" required>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="contactEmail">Email *</label>
+                                <input type="email" id="contactEmail" name="email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="contactPhone">Phone</label>
+                                <input type="tel" id="contactPhone" name="phone">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="contactCompany">Company</label>
+                            <input type="text" id="contactCompany" name="company">
+                        </div>
+                        <div class="form-group">
+                            <label for="contactSubject">Subject *</label>
+                            <select id="contactSubject" name="subject" required>
+                                <option value="">Select a subject</option>
+                                <option value="general">General Inquiry</option>
+                                <option value="quote">Request Quote</option>
+                                <option value="testing">Testing Services</option>
+                                <option value="sample-collection">Sample Collection</option>
+                                <option value="rush-service">Rush Service</option>
+                                <option value="billing">Billing Question</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="contactMessage">Message *</label>
+                            <textarea id="contactMessage" name="message" rows="5" placeholder="Please describe your inquiry or testing needs..." required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-large">
+                            <i class="fas fa-paper-plane"></i>
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+                <div class="contact-map-section">
+                    <h3>Find Us</h3>
+                    <div class="contact-map">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3327.123456789!2d-112.123456789!3d33.123456789!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x872b12b8b8b8b8b8%3A0x1234567890abcdef!2s3540%20E%20Corona%20Ave%2C%20Phoenix%2C%20AZ%2085040!5e0!3m2!1sen!2sus!4v1234567890123!5m2!1sen!2sus" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quote Form Modal -->
+    <div class="modal" id="quoteModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Request a Quote</h2>
+                <button class="modal-close" onclick="closeQuoteForm()">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form id="quoteForm" class="quote-form">
+                    <div class="form-step active" data-step="1">
+                        <h3>Selected Tests</h3>
+                        <div class="selected-tests" id="selectedTests">
+                            <!-- Selected tests will be displayed here -->
+                        </div>
+                        <button type="button" class="btn btn-secondary" onclick="addMoreTests()">
+                            <i class="fas fa-plus"></i> Add More Tests
+                        </button>
+                    </div>
+                    
+                    <div class="form-step" data-step="2">
+                        <h3>Contact Information</h3>
+                        <div class="form-group">
+                            <label for="firstName">First Name *</label>
+                            <input type="text" id="firstName" name="firstName" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="lastName">Last Name *</label>
+                            <input type="text" id="lastName" name="lastName" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email *</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone *</label>
+                            <input type="tel" id="phone" name="phone" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="company">Company</label>
+                            <input type="text" id="company" name="company">
+                        </div>
+                    </div>
+                    
+                    <div class="form-step" data-step="3">
+                        <h3>Test Details</h3>
+                        <div class="form-group">
+                            <label for="urgency">Urgency Level</label>
+                            <select id="urgency" name="urgency">
+                                <option value="standard">Standard (4-7 days)</option>
+                                <option value="rush">Rush (1-3 days)</option>
+                                <option value="economy">Economy (8+ days)</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="quantity">Number of Samples</label>
+                            <input type="number" id="quantity" name="quantity" min="1" value="1">
+                        </div>
+                        <div class="form-group">
+                            <label for="sampleCollection">Sample Collection</label>
+                            <select id="sampleCollection" name="sampleCollection">
+                                <option value="customer">I will provide samples</option>
+                                <option value="laboratory">Laboratory collection needed</option>
+                                <option value="consultation">Need consultation on collection</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="comments">Additional Comments</label>
+                            <textarea id="comments" name="comments" rows="4" placeholder="Any specific requirements or questions..."></textarea>
+                        </div>
+                    </div>
+                    
+                    <div class="form-navigation">
+                        <button type="button" class="btn btn-secondary" id="prevBtn" onclick="changeStep(-1)" style="display: none;">Previous</button>
+                        <button type="button" class="btn btn-primary" id="nextBtn" onclick="changeStep(1)">Next</button>
+                        <button type="submit" class="btn btn-primary" id="submitBtn" style="display: none;">Submit Quote Request</button>
+                    </div>
+                    
+                    <div class="form-progress">
+                        <div class="progress-bar">
+                            <div class="progress-fill" id="progressFill"></div>
+                        </div>
+                        <span class="progress-text" id="progressText">Step 1 of 3</span>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Test Selection Modal -->
+    <div class="modal" id="testSelectionModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Add More Tests</h2>
+                <button class="modal-close" onclick="closeTestSelection()">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="test-selection-container" id="testSelectionContainer">
+                    <!-- Test selection interface will be loaded here -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Motzz Laboratory</h3>
+                    <p>Professional testing services since 2004. ISO 17025 certified laboratory serving Arizona, Nevada, and California.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="#services">Agriculture</a></li>
+                        <li><a href="#services">Environmental</a></li>
+                        <li><a href="#services">Construction</a></li>
+                        <li><a href="#services">Dietary</a></li>
+                        <li><a href="#services">Microbiology</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <p>3540 E. Corona Avenue<br>Phoenix, AZ 85040</p>
+                    <p>Phone: (602) 454-2376</p>
+                    <p>Email: yacinadl@gmail.com</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Certifications</h4>
+                    <ul>
+                        <li>ISO/IEC 17025: 2017</li>
+                        <li>AZ Department of Health Services</li>
+                        <li>AZ Department of Agriculture</li>
+                        <li>AZ Department of Transportation</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Motzz Laboratory. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Success Modal -->
+    <div class="modal" id="successModal">
+        <div class="modal-content success-modal">
+            <div class="success-icon">
+                <i class="fas fa-check-circle"></i>
+            </div>
+            <div class="success-content">
+                <h2>Quote Request Submitted!</h2>
+                <p>Thank you for your interest in our testing services. We have received your quote request and will contact you as soon as possible, typically within 24 hours.</p>
+                <div class="success-details">
+                    <p><strong>What happens next?</strong></p>
+                    <ul>
+                        <li>Our team will review your requirements</li>
+                        <li>We'll prepare a detailed quote for your testing needs</li>
+                        <li>You'll receive a response via email or phone</li>
+                        <li>We can answer any questions you may have</li>
+                    </ul>
+                </div>
+                <button class="btn btn-primary btn-large" onclick="closeSuccessModal()">Got it!</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Cart functionality removed - now using direct email quote requests -->
+
+    <!-- Notification Toast -->
+    <div class="notification-toast" id="notificationToast">
+        <div class="notification-content">
+            <i class="notification-icon"></i>
+            <span class="notification-message"></span>
+        </div>
+        <button class="notification-close" onclick="closeNotification()">
+            <i class="fas fa-times"></i>
+        </button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
