@@ -17,145 +17,380 @@ const testData = {
         icon: 'fas fa-seedling',
         subcategories: [
             {
-                id: 'soil-plant-testing',
-                name: 'Soil & Plant Testing',
-                description: 'Comprehensive soil and plant analysis for agricultural optimization.',
-                icon: 'fas fa-seedling',
+                id: 'soil-testing',
+                name: 'Soil',
+                description: 'Comprehensive soil analysis for agricultural optimization and soil health assessment.',
+                icon: 'fas fa-mountain',
                 tests: [
                     {
-                        id: 'soil-analysis',
-                        name: 'Soil Analysis',
+                        id: 'soil-complete-test',
+                        name: 'Soil Complete Test',
                         description: 'Complete soil testing for nutrient content, pH, and soil health assessment.',
                         icon: 'fas fa-mountain',
-                        tests: 3,
+                        tests: 18,
                         turnaround: '5-7 days',
                         category: 'agriculture',
                         packages: [
                             {
-                                name: 'Basic Soil Package',
-                                description: 'Essential soil nutrients and pH testing.',
-                                features: ['pH Level', 'Organic Matter', 'Phosphorus', 'Potassium', 'Recommendations'],
-                                turnaround: '3-5 days'
-                            },
-                            {
-                                name: 'Complete Soil Analysis',
-                                description: 'Comprehensive soil analysis with micronutrients.',
-                                features: ['All Basic Package items', 'Micronutrients', 'Heavy Metals', 'Salinity', 'CEC (Cation Exchange Capacity)', 'Detailed Report'],
+                                name: 'Soil Complete Test',
+                                description: 'Comprehensive soil analysis with all essential nutrients and properties.',
+                                features: [
+                                    'pH (1:1)',
+                                    'Electrical Conductivity, EC (1:1)',
+                                    'Calcium, Ca (NH4OAc (pH 8.5))',
+                                    'Magnesium, Mg (NH4OAc (pH 8.5))',
+                                    'Sodium, Na (NH4OAc (pH 8.5))',
+                                    'Potassium, K (NH4OAc (pH 8.5))',
+                                    'Zinc, Zn (DTPA)',
+                                    'Iron, Fe (DTPA)',
+                                    'Manganese, Mn (DTPA)',
+                                    'Copper, Cu (DTPA)',
+                                    'Nickel, Ni (DTPA)',
+                                    'Nitrate-N, NO3-N (Cd-Reduction)',
+                                    'Phosphate-P, PO4-P (Olsen)',
+                                    'Sulfate-S, SO4-S (Hot Water)',
+                                    'Boron, B (Hot Water)',
+                                    'Free Lime, FL (Acid Test)',
+                                    'ESP (Calculated)',
+                                    'CEC (Calculated)'
+                                ],
                                 turnaround: '5-7 days'
-                            },
-                            {
-                                name: 'Heavy Metals Screening',
-                                description: 'Specialized testing for heavy metal contamination.',
-                                features: ['Lead', 'Cadmium', 'Mercury', 'Arsenic', 'Chromium', 'Compliance Report'],
-                                turnaround: '7-10 days'
                             }
                         ]
                     },
                     {
-                        id: 'plant-tissue-analysis',
-                        name: 'Plant/Tissue Analysis',
-                        description: 'Plant tissue and petiole analysis for nutrient deficiency diagnosis.',
+                        id: 'compost-available',
+                        name: 'Compost Available',
+                        description: 'Compost available nutrients testing for soil amendment assessment.',
+                        icon: 'fas fa-recycle',
+                        tests: 17,
+                        turnaround: '6-8 days',
+                        category: 'agriculture',
+                        packages: [
+                            {
+                                name: 'Compost Available Nutrients',
+                                description: 'Testing for available nutrients in compost materials.',
+                                features: [
+                                    'pH (1:1)',
+                                    'Electrical Conductivity, EC (1:1)',
+                                    'Calcium, Ca (NH4OAc (pH 8.5))',
+                                    'Magnesium, Mg (NH4OAc (pH 8.5))',
+                                    'Sodium, Na (NH4OAc (pH 8.5))',
+                                    'Potassium, K (NH4OAc (pH 8.5))',
+                                    'Zinc, Zn (DTPA)',
+                                    'Iron, Fe (DTPA)',
+                                    'Manganese, Mn (DTPA)',
+                                    'Copper, Cu (DTPA)',
+                                    'Nickel, Ni (DTPA)',
+                                    'Nitrate-N, NO3-N (Cd-Reduction)',
+                                    'Phosphate-P, PO4-P (Olsen)',
+                                    'Sulfate-S, SO4-S (Hot Water)',
+                                    'Boron, B (Hot Water)',
+                                    'Free Lime, FL (Acid Test)',
+                                    'ESP (Calculated)'
+                                ],
+                                turnaround: '6-8 days'
+                            }
+                        ]
+                    },
+                    {
+                        id: 'compost-total',
+                        name: 'Compost Total',
+                        description: 'Compost total nutrients testing for complete nutrient analysis.',
+                        icon: 'fas fa-recycle',
+                        tests: 18,
+                        turnaround: '6-8 days',
+                        category: 'agriculture',
+                        packages: [
+                            {
+                                name: 'Compost Total Nutrients',
+                                description: 'Complete nutrient analysis of compost materials.',
+                                features: [
+                                    'pH (1:1)',
+                                    'Electrical Conductivity, EC (1:1)',
+                                    'Calcium, Ca (NH4OAc (pH 8.5))',
+                                    'Magnesium, Mg (NH4OAc (pH 8.5))',
+                                    'Sodium, Na (NH4OAc (pH 8.5))',
+                                    'Potassium, K (NH4OAc (pH 8.5))',
+                                    'Zinc, Zn (DTPA)',
+                                    'Iron, Fe (DTPA)',
+                                    'Manganese, Mn (DTPA)',
+                                    'Copper, Cu (DTPA)',
+                                    'Nickel, Ni (DTPA)',
+                                    'Nitrate-N, NO3-N (Cd-Reduction)',
+                                    'Phosphate-P, PO4-P (Olsen)',
+                                    'Sulfate-S, SO4-S (Hot Water)',
+                                    'Boron, B (Hot Water)',
+                                    'Free Lime, FL (Acid Test)',
+                                    'ESP (Calculated)',
+                                    'CEC (Calculated)'
+                                ],
+                                turnaround: '6-8 days'
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                id: 'plant-testing',
+                name: 'Plants',
+                description: 'Plant tissue and petiole analysis for nutrient deficiency diagnosis and plant health assessment.',
+                icon: 'fas fa-leaf',
+                tests: [
+                    {
+                        id: 'plant-complete-test',
+                        name: 'Plant Complete Test',
+                        description: 'Complete plant tissue analysis for comprehensive nutrient assessment.',
+                        icon: 'fas fa-leaf',
+                        tests: 12,
+                        turnaround: '3-5 days',
+                        category: 'agriculture',
+                        packages: [
+                            {
+                                name: 'Plant Complete Test',
+                                description: 'Comprehensive plant tissue analysis for all essential nutrients.',
+                                features: [
+                                    'Total Nitrogen, N (Combustion)',
+                                    'Total Calcium, Ca (Acid Digestion)',
+                                    'Total Magnesium, Mg (Acid Digestion)',
+                                    'Total Sodium, Na (Acid Digestion)',
+                                    'Total Potassium, K (Acid Digestion)',
+                                    'Total Phosphorus, P (Acid Digestion)',
+                                    'Total Sulfur, S (Acid Digestion)',
+                                    'Total Zinc, Zn (Acid Digestion)',
+                                    'Total Iron, Fe (Acid Digestion)',
+                                    'Total Manganese, Mn (Acid Digestion)',
+                                    'Total Copper, Cu (Acid Digestion)',
+                                    'Total Boron, B (Acid Digestion)'
+                                ],
+                                turnaround: '3-5 days'
+                            }
+                        ]
+                    },
+                    {
+                        id: 'petiole-complete-test',
+                        name: 'Petiole Complete Test',
+                        description: 'Complete petiole analysis for detailed nutrient assessment.',
+                        icon: 'fas fa-leaf',
+                        tests: 12,
+                        turnaround: '3-5 days',
+                        category: 'agriculture',
+                        packages: [
+                            {
+                                name: 'Petiole Complete Test',
+                                description: 'Comprehensive petiole analysis for all essential nutrients.',
+                                features: [
+                                    'Total Nitrogen, N (Combustion)',
+                                    'Total Calcium, Ca (Acid Digestion)',
+                                    'Total Magnesium, Mg (Acid Digestion)',
+                                    'Total Sodium, Na (Acid Digestion)',
+                                    'Total Potassium, K (Acid Digestion)',
+                                    'Total Phosphorus, P (Acid Digestion)',
+                                    'Total Sulfur, S (Acid Digestion)',
+                                    'Total Zinc, Zn (Acid Digestion)',
+                                    'Total Iron, Fe (Acid Digestion)',
+                                    'Total Manganese, Mn (Acid Digestion)',
+                                    'Total Copper, Cu (Acid Digestion)',
+                                    'Total Boron, B (Acid Digestion)'
+                                ],
+                                turnaround: '3-5 days'
+                            }
+                        ]
+                    },
+                    {
+                        id: 'petiole-npk',
+                        name: 'Petiole NPK',
+                        description: 'Petiole NPK analysis for primary nutrient assessment.',
+                        icon: 'fas fa-leaf',
+                        tests: 3,
+                        turnaround: '3-5 days',
+                        category: 'agriculture',
+                        packages: [
+                            {
+                                name: 'Petiole NPK Analysis',
+                                description: 'Nitrogen, Phosphorus, and Potassium analysis in petiole samples.',
+                                features: [
+                                    'Total Nitrogen, N (Combustion)',
+                                    'Total Phosphorus, P (Acid Digestion)',
+                                    'Total Potassium, K (Acid Digestion)'
+                                ],
+                                turnaround: '3-5 days'
+                            }
+                        ]
+                    },
+                    {
+                        id: 'petiole-np',
+                        name: 'Petiole NP',
+                        description: 'Petiole NP analysis for nitrogen and phosphorus assessment.',
                         icon: 'fas fa-leaf',
                         tests: 2,
                         turnaround: '3-5 days',
                         category: 'agriculture',
                         packages: [
                             {
-                                name: 'Basic Plant Analysis',
-                                description: 'Essential plant nutrient analysis.',
-                                features: ['Nitrogen', 'Phosphorus', 'Potassium', 'Basic Recommendations'],
+                                name: 'Petiole NP Analysis',
+                                description: 'Nitrogen and Phosphorus analysis in petiole samples.',
+                                features: [
+                                    'Total Nitrogen, N (Combustion)',
+                                    'Total Phosphorus, P (Acid Digestion)'
+                                ],
                                 turnaround: '3-5 days'
-                            },
-                            {
-                                name: 'Complete Plant Analysis',
-                                description: 'Comprehensive plant tissue analysis.',
-                                features: ['All Basic items', 'Micronutrients', 'Heavy Metals', 'Detailed Report'],
-                                turnaround: '5-7 days'
                             }
                         ]
                     }
                 ]
             },
             {
-                id: 'water-irrigation',
-                name: 'Water & Irrigation',
+                id: 'water-testing',
+                name: 'Water',
                 description: 'Water quality testing for agricultural irrigation and water management.',
                 icon: 'fas fa-tint',
                 tests: [
                     {
-                        id: 'water-quality',
-                        name: 'Water Quality',
-                        description: 'Irrigation water quality testing for agricultural use.',
+                        id: 'water-complete-irrigation',
+                        name: 'Water Complete Irrigation',
+                        description: 'Complete irrigation water quality testing for agricultural use.',
                         icon: 'fas fa-tint',
-                        tests: 2,
+                        tests: 13,
                         turnaround: '4-6 days',
                         category: 'agriculture',
                         packages: [
                             {
-                                name: 'Basic Water Analysis',
-                                description: 'Essential water quality parameters.',
-                                features: ['pH', 'EC', 'Total Dissolved Solids', 'Basic Recommendations'],
+                                name: 'Water Complete Irrigation',
+                                description: 'Comprehensive irrigation water quality testing.',
+                                features: [
+                                    'pH (1:1)',
+                                    'Electrical Conductivity, EC (1:1)',
+                                    'Calcium, Ca (NH4OAc (pH 8.5))',
+                                    'Magnesium, Mg (NH4OAc (pH 8.5))',
+                                    'Sodium, Na (NH4OAc (pH 8.5))',
+                                    'Potassium, K (NH4OAc (pH 8.5))',
+                                    'Zinc, Zn (DTPA)',
+                                    'Iron, Fe (DTPA)',
+                                    'Manganese, Mn (DTPA)',
+                                    'Copper, Cu (DTPA)',
+                                    'Nickel, Ni (DTPA)',
+                                    'Nitrate-N, NO3-N (Cd-Reduction)',
+                                    'Phosphate-P, PO4-P (Olsen)'
+                                ],
                                 turnaround: '4-6 days'
-                            },
-                            {
-                                name: 'Complete Water Analysis',
-                                description: 'Comprehensive water quality testing.',
-                                features: ['All Basic items', 'Nutrients', 'Heavy Metals', 'Bacteria', 'Detailed Report'],
-                                turnaround: '6-8 days'
                             }
                         ]
                     }
                 ]
             },
             {
-                id: 'materials-amendments',
-                name: 'Materials & Amendments',
-                description: 'Testing for compost, mulch, and fertilizer products used in agriculture.',
-                icon: 'fas fa-recycle',
+                id: 'fertilizer-testing',
+                name: 'Fertilizer',
+                description: 'Fertilizer analysis and heavy metals testing for quality assurance and regulatory compliance.',
+                icon: 'fas fa-flask',
                 tests: [
                     {
-                        id: 'compost-mulch',
-                        name: 'Compost/Mulch',
-                        description: 'Compost and mulch quality testing for soil amendment.',
-                        icon: 'fas fa-recycle',
-                        tests: 2,
-                        turnaround: '6-8 days',
-                        category: 'agriculture',
-                        packages: [
-                            {
-                                name: 'Basic Compost Analysis',
-                                description: 'Essential compost quality parameters.',
-                                features: ['Organic Matter', 'pH', 'Nutrients', 'Basic Recommendations'],
-                                turnaround: '6-8 days'
-                            },
-                            {
-                                name: 'Complete Compost Analysis',
-                                description: 'Comprehensive compost and mulch testing.',
-                                features: ['All Basic items', 'Heavy Metals', 'Pathogens', 'Stability', 'Detailed Report'],
-                                turnaround: '8-10 days'
-                            }
-                        ]
-                    },
-                    {
-                        id: 'fertilizer-analysis',
-                        name: 'Fertilizer Analysis',
-                        description: 'Liquid and solid fertilizer testing for quality assurance.',
+                        id: 'fertilizer-complete-analysis',
+                        name: 'Fertilizer Complete Analysis',
+                        description: 'Complete fertilizer analysis for quality assurance.',
                         icon: 'fas fa-flask',
-                        tests: 2,
+                        tests: 12,
                         turnaround: '4-6 days',
                         category: 'agriculture',
                         packages: [
                             {
-                                name: 'Basic Fertilizer Analysis',
-                                description: 'Essential fertilizer nutrient analysis.',
-                                features: ['NPK Analysis', 'pH', 'Basic Quality Check'],
+                                name: 'Fertilizer Complete Analysis',
+                                description: 'Comprehensive fertilizer nutrient analysis.',
+                                features: [
+                                    'Total Nitrogen, N (Combustion)',
+                                    'Total Calcium, Ca (Acid Digestion)',
+                                    'Total Magnesium, Mg (Acid Digestion)',
+                                    'Total Sodium, Na (Acid Digestion)',
+                                    'Total Potassium, K (Acid Digestion)',
+                                    'Total Phosphorus, P (Acid Digestion)',
+                                    'Total Sulfur, S (Acid Digestion)',
+                                    'Total Zinc, Zn (Acid Digestion)',
+                                    'Total Iron, Fe (Acid Digestion)',
+                                    'Total Manganese, Mn (Acid Digestion)',
+                                    'Total Copper, Cu (Acid Digestion)',
+                                    'Total Boron, B (Acid Digestion)'
+                                ],
                                 turnaround: '4-6 days'
+                            }
+                        ]
+                    },
+                    {
+                        id: 'heavy-metals-state-registrations',
+                        name: 'Heavy Metals (State Registrations)',
+                        description: 'Heavy metals testing for state registration compliance.',
+                        icon: 'fas fa-shield-alt',
+                        tests: 10,
+                        turnaround: '7-10 days',
+                        category: 'agriculture',
+                        packages: [
+                            {
+                                name: 'Heavy Metals (State Registrations)',
+                                description: 'Heavy metals testing for regulatory compliance.',
+                                features: [
+                                    'Lead, Pb (ICP-MS)',
+                                    'Cadmium, Cd (ICP-MS)',
+                                    'Mercury, Hg (ICP-MS)',
+                                    'Arsenic, As (ICP-MS)',
+                                    'Chromium, Cr (ICP-MS)',
+                                    'Nickel, Ni (ICP-MS)',
+                                    'Copper, Cu (ICP-MS)',
+                                    'Zinc, Zn (ICP-MS)',
+                                    'Manganese, Mn (ICP-MS)',
+                                    'Iron, Fe (ICP-MS)'
+                                ],
+                                turnaround: '7-10 days'
+                            }
+                        ]
+                    },
+                    {
+                        id: 'humic-fulvic-acids',
+                        name: 'Humic and Fulvic Acids',
+                        description: 'Humic and fulvic acids testing using various methods (AOAC, ISO, CDFA, V&B, Colorimetric).',
+                        icon: 'fas fa-flask',
+                        tests: 5,
+                        turnaround: '5-7 days',
+                        category: 'agriculture',
+                        packages: [
+                            {
+                                name: 'Humic Acid (BaCl2)',
+                                description: 'Humic acid testing using BaCl2 method.',
+                                features: [
+                                    'Humic Acid (BaCl2)'
+                                ],
+                                turnaround: '5-7 days'
                             },
                             {
-                                name: 'Complete Fertilizer Analysis',
-                                description: 'Comprehensive fertilizer testing.',
-                                features: ['All Basic items', 'Micronutrients', 'Heavy Metals', 'Contaminants', 'Detailed Report'],
-                                turnaround: '6-8 days'
+                                name: 'Humic Acid (CDFA)',
+                                description: 'Humic acid testing using CDFA method.',
+                                features: [
+                                    'Humic Acid (CDFA)'
+                                ],
+                                turnaround: '5-7 days'
+                            },
+                            {
+                                name: 'Humic Acid (Colorimetric)',
+                                description: 'Humic acid testing using colorimetric method.',
+                                features: [
+                                    'Humic Acid (Colorimetric)'
+                                ],
+                                turnaround: '5-7 days'
+                            },
+                            {
+                                name: 'Humic Acid (ISO 19822)',
+                                description: 'Humic acid testing using ISO 19822 method.',
+                                features: [
+                                    'Humic Acid (ISO 19822)'
+                                ],
+                                turnaround: '5-7 days'
+                            },
+                            {
+                                name: 'Humic Acid (V&B)',
+                                description: 'Humic acid testing using V&B method.',
+                                features: [
+                                    'Humic Acid (V&B)'
+                                ],
+                                turnaround: '5-7 days'
                             }
                         ]
                     }
@@ -369,60 +604,313 @@ const testData = {
             }
         ]
     },
+    water: {
+        name: 'Water',
+        description: 'Comprehensive water testing services for irrigation, drinking water, and wastewater analysis.',
+        icon: 'fas fa-tint',
+        subcategories: [
+            {
+                id: 'water-testing',
+                name: 'Water Testing',
+                description: 'Comprehensive water testing for various applications and quality standards.',
+                icon: 'fas fa-tint',
+                tests: [
+                    {
+                        id: 'water-complete-irrigation',
+                        name: 'Water Complete Irrigation',
+                        description: 'Complete irrigation water quality testing for agricultural use.',
+                        icon: 'fas fa-seedling',
+                        tests: 12,
+                        turnaround: '4-6 days',
+                        category: 'water',
+                        packages: [
+                            {
+                                name: 'Water Complete Irrigation',
+                                description: 'Comprehensive irrigation water quality testing.',
+                                features: [
+                                    'Sodium, Na',
+                                    'Calcium, Ca',
+                                    'Magnesium, Mg',
+                                    'Potassium, K',
+                                    'Carbonate, CO3',
+                                    'Bicarbonate, HCO3',
+                                    'Chloride, Cl',
+                                    'Sulfate-S, SO4-S',
+                                    'Nitrate-N, NO3-N',
+                                    'Phosphate-P, PO4-P',
+                                    'Boron, B',
+                                    'Electrical Conductivity, EC'
+                                ],
+                                turnaround: '4-6 days'
+                            }
+                        ]
+                    },
+                    {
+                        id: 'water-quality-a',
+                        name: 'Water Quality A',
+                        description: 'Comprehensive water quality testing for builders and construction.',
+                        icon: 'fas fa-hammer',
+                        tests: 14,
+                        turnaround: '3-5 days',
+                        category: 'water',
+                        packages: [
+                            {
+                                name: 'Water Quality A',
+                                description: 'Essential water quality parameters for builders.',
+                                features: [
+                                    'Calcium, Ca',
+                                    'Magnesium, Mg',
+                                    'Hardness',
+                                    'Water Classification',
+                                    'Total Dissolved Solids',
+                                    'Fluoride, F',
+                                    'Nitrate-N, NO3-N',
+                                    'Nitrite-N, NO2-N',
+                                    'Arsenic, As',
+                                    'Iron, Fe',
+                                    'Lead, Pb',
+                                    'Uranium, U',
+                                    'Total Coliform',
+                                    'E. coli'
+                                ],
+                                turnaround: '3-5 days'
+                            }
+                        ]
+                    },
+                    {
+                        id: 'water-quality-b',
+                        name: 'Water Quality B',
+                        description: 'Water quality testing for bank loan requirements.',
+                        icon: 'fas fa-university',
+                        tests: 5,
+                        turnaround: '3-5 days',
+                        category: 'water',
+                        packages: [
+                            {
+                                name: 'Water Quality B',
+                                description: 'Essential water quality tests for bank loans.',
+                                features: [
+                                    'Lead, Pb',
+                                    'Nitrate-N, NO3-N',
+                                    'Nitrite-N, NO2-N',
+                                    'Total Coliform',
+                                    'E. coli'
+                                ],
+                                turnaround: '3-5 days'
+                            }
+                        ]
+                    },
+                    {
+                        id: 'water-quality-c',
+                        name: 'Water Quality C',
+                        description: 'ADHS recommended water quality testing for wells.',
+                        icon: 'fas fa-well',
+                        tests: 9,
+                        turnaround: '3-5 days',
+                        category: 'water',
+                        packages: [
+                            {
+                                name: 'Water Quality C',
+                                description: 'ADHS recommended well water testing.',
+                                features: [
+                                    'Arsenic, As',
+                                    'Lead, Pb',
+                                    'Uranium, U',
+                                    'Fluoride, F',
+                                    'Nitrate-N, NO3-N',
+                                    'Nitrite-N, NO2-N',
+                                    'Total Dissolved Solids',
+                                    'Total Coliform',
+                                    'E. coli'
+                                ],
+                                turnaround: '3-5 days'
+                            }
+                        ]
+                    },
+                    {
+                        id: 'wastewater',
+                        name: 'Wastewater',
+                        description: 'Comprehensive wastewater treatment and discharge testing.',
+                        icon: 'fas fa-recycle',
+                        tests: 41,
+                        turnaround: '5-7 days',
+                        category: 'water',
+                        packages: [
+                            {
+                                name: 'Wastewater Analysis',
+                                description: 'Comprehensive wastewater testing and analysis.',
+                                features: [
+                                    'Aluminum, Al',
+                                    'Ammonia-Nitrogen, NH4-N',
+                                    'Ash, %',
+                                    'Biochemical Oxygen Demand, BOD',
+                                    'Boron, B',
+                                    'Calcium, Ca',
+                                    'Chemical Oxygen Demand, COD',
+                                    'Chloride, Cl',
+                                    'Chromium, Cr',
+                                    'Copper, Cu',
+                                    'Dry Matter',
+                                    'Hydroxide, OH',
+                                    'Iron, Fe',
+                                    'Magnesium, Mg',
+                                    'Manganese, Mn',
+                                    'Moisture',
+                                    'Nickel, Ni',
+                                    'Nitrate-N, NO3-N',
+                                    'Nitrogen',
+                                    'Normality, N',
+                                    'Organic Nitrogen',
+                                    'Phosphorus, P',
+                                    'Potassium, K',
+                                    'Sodium Dicromate, Na2Cr2O7',
+                                    'Sodium, Na',
+                                    'Soluble Salts',
+                                    'Sulfate, SO4',
+                                    'Sulfur, S',
+                                    'Total Dissolved Solids, TDS',
+                                    'Total Nitrogen, N',
+                                    'Total Phosphorus, P',
+                                    'Total Phosphorus, P2O5',
+                                    'Total Potassium, K',
+                                    'Total Potassium, K2O',
+                                    'Total Solubility',
+                                    'Total Suspended Solids, TSS',
+                                    'Zinc, Zn',
+                                    'Hydrochloric Acid, HCl',
+                                    'Nitric Acid Content',
+                                    'Phosphoric Acid, H3PO4',
+                                    'Sulfuric Acid Content'
+                                ],
+                                turnaround: '5-7 days'
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
     microbiology: {
         name: 'Microbiology',
-        description: 'Microbiology testing for water and fertilizer products.',
+        description: 'Comprehensive microbiology testing services for pathogens and microbial contaminants.',
         icon: 'fas fa-microscope',
         subcategories: [
             {
                 id: 'microbiological-testing',
                 name: 'Microbiological Testing',
-                description: 'Comprehensive microbiological testing for water and fertilizer products.',
+                description: 'Comprehensive microbiological testing for pathogens and microbial contaminants.',
                 icon: 'fas fa-microscope',
                 tests: [
                     {
-                        id: 'water-microbiology',
-                        name: 'Water Microbiology',
-                        description: 'Microbiological testing for water quality and safety.',
-                        icon: 'fas fa-tint',
+                        id: 'microbiology-lgma',
+                        name: 'Microbiology (LGMA)',
+                        description: 'LGMA compliant microbiological testing for food safety.',
+                        icon: 'fas fa-certificate',
+                        tests: 4,
+                        turnaround: '3-5 days',
+                        category: 'microbiology',
+                        packages: [
+                            {
+                                name: 'Microbiology (LGMA)',
+                                description: 'LGMA compliant pathogen testing.',
+                                features: [
+                                    'STEC',
+                                    'Listeria monocytogenes',
+                                    'Salmonella',
+                                    'Fecal Coliform'
+                                ],
+                                turnaround: '3-5 days'
+                            }
+                        ]
+                    },
+                    {
+                        id: 'microbiology-pcr',
+                        name: 'Microbiology (PCR)',
+                        description: 'PCR-based microbiological testing for rapid pathogen detection.',
+                        icon: 'fas fa-dna',
+                        tests: 6,
+                        turnaround: '2-4 days',
+                        category: 'microbiology',
+                        packages: [
+                            {
+                                name: 'Microbiology (PCR)',
+                                description: 'Rapid PCR-based pathogen detection.',
+                                features: [
+                                    'Listeria monocytogenes',
+                                    'Listeria spp.',
+                                    'Salmonella spp.',
+                                    'STEC (E. coli O157:H7)',
+                                    'STEC (E. coli Top 6)',
+                                    'STEC (EHEC)'
+                                ],
+                                turnaround: '2-4 days'
+                            }
+                        ]
+                    },
+                    {
+                        id: 'microbiology-petrifilm',
+                        name: 'Microbiology (Petrifilm)',
+                        description: 'Petrifilm-based microbiological testing for rapid enumeration.',
+                        icon: 'fas fa-film',
+                        tests: 5,
+                        turnaround: '3-5 days',
+                        category: 'microbiology',
+                        packages: [
+                            {
+                                name: 'Microbiology (Petrifilm)',
+                                description: 'Rapid Petrifilm-based microbial enumeration.',
+                                features: [
+                                    'Aerobic Plate Count (APC)',
+                                    'Staphylococcus aureus',
+                                    'Total Coliform and E. coli',
+                                    'Yeast and Mold',
+                                    'L. acidophilus'
+                                ],
+                                turnaround: '3-5 days'
+                            }
+                        ]
+                    },
+                    {
+                        id: 'microbiology-plate',
+                        name: 'Microbiology (Plate)',
+                        description: 'Traditional plate-based microbiological testing methods.',
+                        icon: 'fas fa-microscope',
                         tests: 2,
                         turnaround: '3-5 days',
                         category: 'microbiology',
                         packages: [
                             {
-                                name: 'Basic Water Microbiology',
-                                description: 'Essential water microbiology testing.',
-                                features: ['Total Coliforms', 'E. coli', 'Basic Bacteria'],
+                                name: 'Microbiology (Plate)',
+                                description: 'Traditional plate-based microbial testing.',
+                                features: [
+                                    'Heterotrophic Plate Count (HPC)',
+                                    'Pseudomonas aeruginosa'
+                                ],
                                 turnaround: '3-5 days'
-                            },
-                            {
-                                name: 'Complete Water Microbiology',
-                                description: 'Comprehensive water microbiology testing.',
-                                features: ['All Basic items', 'Pathogens', 'Detailed Report'],
-                                turnaround: '5-7 days'
                             }
                         ]
                     },
                     {
-                        id: 'fertilizer-microbiology',
-                        name: 'Fertilizer Microbiology',
-                        description: 'Microbiological testing for fertilizer products.',
+                        id: 'microbial-contaminants-other',
+                        name: 'Microbial Contaminants (Other Methods)',
+                        description: 'Specialized microbiological testing using alternative methods.',
                         icon: 'fas fa-flask',
-                        tests: 2,
+                        tests: 6,
                         turnaround: '4-6 days',
                         category: 'microbiology',
                         packages: [
                             {
-                                name: 'Basic Fertilizer Microbiology',
-                                description: 'Essential fertilizer microbiology testing.',
-                                features: ['Total Bacteria', 'Pathogens', 'Basic Analysis'],
+                                name: 'Microbial Contaminants (Other Methods)',
+                                description: 'Specialized microbial contaminant testing.',
+                                features: [
+                                    'Fecal Coliform',
+                                    'Pseudomonas aeruginosa',
+                                    'Enterococci',
+                                    'Endotoxins',
+                                    'Iron-Reducing Bacteria',
+                                    'Sulfur-Reducing Bacteria'
+                                ],
                                 turnaround: '4-6 days'
-                            },
-                            {
-                                name: 'Complete Fertilizer Microbiology',
-                                description: 'Comprehensive fertilizer microbiology testing.',
-                                features: ['All Basic items', 'Detailed Pathogen Analysis', 'Detailed Report'],
-                                turnaround: '6-8 days'
                             }
                         ]
                     }
@@ -513,6 +1001,7 @@ function displayServices(data, filteredData = null) {
                             <i class="fas fa-clock"></i>
                             <span>3-10 days</span>
                         </div>
+                        ${category.id === 'microbiology' ? '<div class="meta-item"><i class="fas fa-certificate"></i><span>ISO Certified</span></div>' : ''}
                     </div>
                     <div class="service-actions">
                         <button class="btn btn-secondary" onclick="viewCategoryDetails('${categoryKey}')">
@@ -689,13 +1178,143 @@ function displaySubcategoryTests(categoryKey, subcategoryId, subcategory) {
     addHoverEffects();
 }
 
+// Function to check if a specific test feature is ISO certified
+function isISOcertifiedTest(feature) {
+    // List of ISO certified test names from the scope (Biological + Chemical)
+    const isoCertifiedTests = [
+        // Biological tests
+        'aerobic plate count',
+        'staphylococcus aureus',
+        'total coliform',
+        'e. coli',
+        'yeast and mold',
+        'listeria monocytogenes',
+        'listeria spp',
+        'salmonella',
+        'stec',
+        'heterotrophic plate count',
+        'hpc',
+        'pseudomonas aeruginosa',
+        'fecal coliform',
+        'enterococci',
+        'endotoxins',
+        // Chemical tests
+        'total nitrogen',
+        'metals by icp',
+        'phosphorous',
+        'potassium',
+        'arsenic',
+        'barium',
+        'cadmium',
+        'chromium',
+        'cobalt',
+        'copper',
+        'mercury',
+        'molybdenum',
+        'lead',
+        'selenium',
+        'zinc',
+        'humic',
+        'fulvic acid',
+        'moisture content',
+        'ash content',
+        'organic matter',
+        'cannabinoids',
+        'thc'
+    ];
+    
+    const lowerFeature = feature.toLowerCase();
+    return isoCertifiedTests.some(isoTest => 
+        lowerFeature.includes(isoTest) ||
+        lowerFeature.includes('microbial') ||
+        lowerFeature.includes('bacteria') ||
+        lowerFeature.includes('pathogen') ||
+        lowerFeature.includes('microbiology') ||
+        lowerFeature.includes('coliform') ||
+        lowerFeature.includes('e. coli') ||
+        lowerFeature.includes('nitrogen') ||
+        lowerFeature.includes('phosphorus') ||
+        lowerFeature.includes('potassium') ||
+        lowerFeature.includes('heavy metals') ||
+        lowerFeature.includes('metals')
+    );
+}
+
+// Function to check if a package contains ISO certified tests (kept for package-level highlighting if needed)
+function isISOcertifiedPackage(package, test) {
+    // List of ISO certified test names from the scope (Biological + Chemical)
+    const isoCertifiedTests = [
+        // Biological tests
+        'aerobic plate count',
+        'staphylococcus aureus',
+        'total coliform',
+        'e. coli',
+        'yeast and mold',
+        'listeria monocytogenes',
+        'listeria spp',
+        'salmonella',
+        'stec',
+        'heterotrophic plate count',
+        'hpc',
+        'pseudomonas aeruginosa',
+        'fecal coliform',
+        'enterococci',
+        'endotoxins',
+        // Chemical tests
+        'total nitrogen',
+        'metals by icp',
+        'phosphorous',
+        'potassium',
+        'arsenic',
+        'barium',
+        'cadmium',
+        'chromium',
+        'cobalt',
+        'copper',
+        'mercury',
+        'molybdenum',
+        'lead',
+        'selenium',
+        'zinc',
+        'humic',
+        'fulvic acid',
+        'moisture content',
+        'ash content',
+        'organic matter',
+        'cannabinoids',
+        'thc'
+    ];
+    
+    // Check if any feature in the package matches ISO certified tests
+    return package.features.some(feature => {
+        const lowerFeature = feature.toLowerCase();
+        return isoCertifiedTests.some(isoTest => 
+            lowerFeature.includes(isoTest) ||
+            lowerFeature.includes('microbial') ||
+            lowerFeature.includes('bacteria') ||
+            lowerFeature.includes('pathogen') ||
+            lowerFeature.includes('microbiology') ||
+            lowerFeature.includes('coliform') ||
+            lowerFeature.includes('e. coli') ||
+            lowerFeature.includes('nitrogen') ||
+            lowerFeature.includes('phosphorus') ||
+            lowerFeature.includes('potassium') ||
+            lowerFeature.includes('heavy metals') ||
+            lowerFeature.includes('metals')
+        );
+    });
+}
+
 function generateTestPackagesHTML(packages, testId, categoryKey) {
     return packages.map(pkg => `
         <div class="package-item">
             <h4 class="package-title">${pkg.name}</h4>
             <p class="package-description">${pkg.description}</p>
             <ul class="package-features">
-                ${pkg.features.map(feature => `<li><i class="fas fa-check"></i> ${feature}</li>`).join('')}
+                ${pkg.features.map(feature => {
+                    const isISO = isISOcertifiedTest(feature);
+                    return `<li><i class="fas fa-check"></i> ${feature} ${isISO ? '<span class="iso-test-badge">ISO</span>' : ''}</li>`;
+                }).join('')}
             </ul>
             <div class="package-meta">
                 <span><i class="fas fa-clock"></i> ${pkg.turnaround}</span>
@@ -763,6 +1382,11 @@ function performSearch(query) {
 }
 
 function searchTests(query) {
+    // Check cache first
+    if (searchCache.has(query)) {
+        return searchCache.get(query);
+    }
+    
     const results = [];
     const lowerQuery = query.toLowerCase();
     
@@ -808,7 +1432,18 @@ function searchTests(query) {
         }
     });
     
-    return results.slice(0, 10); // Limit to 10 results
+    const limitedResults = results.slice(0, 10); // Limit to 10 results
+    
+    // Cache the results
+    searchCache.set(query, limitedResults);
+    
+    // Limit cache size to prevent memory issues
+    if (searchCache.size > 100) {
+        const firstKey = searchCache.keys().next().value;
+        searchCache.delete(firstKey);
+    }
+    
+    return limitedResults;
 }
 
 function selectSearchResult(type, id) {
@@ -1276,8 +1911,27 @@ function updateBreadcrumb(items) {
 // Mobile menu functionality
 function toggleMobileMenu() {
     const nav = document.querySelector('.nav');
+    const body = document.body;
+    
     nav.classList.toggle('mobile-active');
+    
+    // Prevent body scroll when menu is open
+    if (nav.classList.contains('mobile-active')) {
+        body.style.overflow = 'hidden';
+    } else {
+        body.style.overflow = '';
+    }
 }
+
+// Close mobile menu when clicking on a link
+function closeMobileMenu() {
+    const nav = document.querySelector('.nav');
+    const body = document.body;
+
+    nav.classList.remove('mobile-active');
+    body.style.overflow = '';
+}
+
 
 // Event listeners setup
 function setupEventListeners() {
@@ -1288,6 +1942,8 @@ function setupEventListeners() {
             const target = document.querySelector(this.getAttribute('href'));
             if (target) {
                 target.scrollIntoView({ behavior: 'smooth' });
+                // Close mobile menu if open
+                closeMobileMenu();
             }
         });
     });
@@ -1302,6 +1958,18 @@ function setupEventListeners() {
         }
     });
     
+    // Close mobile menu when clicking outside
+    document.addEventListener('click', function(e) {
+        const nav = document.querySelector('.nav');
+        const mobileToggle = document.querySelector('.mobile-menu-toggle');
+        
+        if (nav.classList.contains('mobile-active') && 
+            !nav.contains(e.target) && 
+            !mobileToggle.contains(e.target)) {
+            closeMobileMenu();
+        }
+    });
+    
     // Keyboard navigation
     document.addEventListener('keydown', function(e) {
         if (e.key === 'Escape') {
@@ -1309,6 +1977,9 @@ function setupEventListeners() {
             document.querySelectorAll('.modal.active').forEach(modal => {
                 modal.classList.remove('active');
             });
+            
+            // Close mobile menu if open
+            closeMobileMenu();
         }
     });
 }

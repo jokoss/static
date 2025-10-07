@@ -106,3 +106,7 @@ If you need help setting this up, the EmailJS documentation is available at: htt
 ---
 
 **Important:** Keep your EmailJS credentials secure and don't share them publicly.
+
+
+
+

@@ -620,11 +620,11 @@ p {
 }
 
 .meta-item:has(.fa-certificate) {
-    background: linear-gradient(135deg, #B85450 0%, #D2691E 100%);
+    background: linear-gradient(135deg, #8B4513 0%, #A0522D 100%);
     color: white;
     padding: var(--spacing-xs) var(--spacing-sm);
     border-radius: var(--radius-sm);
-    border: 1px solid #8B4513;
+    border: 1px solid #654321;
     font-weight: 600;
 }
 
@@ -681,21 +681,21 @@ p {
 }
 
 .iso-certified-package {
-    border: 2px solid #B85450;
-    background: linear-gradient(135deg, #fdf2f2 0%, #fef7f7 100%);
-    box-shadow: 0 4px 12px rgba(184, 84, 80, 0.1);
+    border: 2px solid #8B4513;
+    background: linear-gradient(135deg, #f5f5dc 0%, #faf0e6 100%);
+    box-shadow: 0 4px 12px rgba(139, 69, 19, 0.1);
 }
 
 .iso-certified-package:hover {
-    border-color: #8B4513;
-    box-shadow: 0 6px 20px rgba(184, 84, 80, 0.15);
+    border-color: #654321;
+    box-shadow: 0 6px 20px rgba(139, 69, 19, 0.15);
 }
 
 .iso-package-badge {
     position: absolute;
     top: -8px;
     right: 16px;
-    background: linear-gradient(135deg, #B85450 0%, #D2691E 100%);
+    background: linear-gradient(135deg, #8B4513 0%, #A0522D 100%);
     color: white;
     padding: var(--spacing-xs) var(--spacing-sm);
     border-radius: var(--radius-sm);
@@ -703,8 +703,8 @@ p {
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.5px;
-    border: 1px solid #8B4513;
-    box-shadow: 0 2px 8px rgba(184, 84, 80, 0.3);
+    border: 1px solid #654321;
+    box-shadow: 0 2px 8px rgba(139, 69, 19, 0.3);
     display: flex;
     align-items: center;
     gap: var(--spacing-xs);
@@ -715,7 +715,7 @@ p {
 }
 
 .iso-test-badge {
-    background: linear-gradient(135deg, #B85450 0%, #D2691E 100%);
+    background: linear-gradient(135deg, #8B4513 0%, #A0522D 100%);
     color: white;
     padding: 2px 6px;
     border-radius: 3px;
@@ -723,8 +723,8 @@ p {
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.3px;
-    border: 1px solid #8B4513;
-    box-shadow: 0 1px 3px rgba(184, 84, 80, 0.2);
+    border: 1px solid #654321;
+    box-shadow: 0 1px 3px rgba(139, 69, 19, 0.2);
     margin-left: 8px;
     display: inline-block;
 }
@@ -1346,7 +1346,7 @@ p {
 
 /* Footer */
 .footer {
-    background-color: var(--text-primary);
+    background: linear-gradient(135deg, #2c1810 0%, #1a0f0a 100%);
     color: var(--text-secondary);
     padding: var(--spacing-3xl) 0 var(--spacing-xl);
 }
@@ -1409,8 +1409,8 @@ p {
 }
 
 .iso-badge {
-    background: linear-gradient(135deg, #B85450 0%, #D2691E 100%);
-    border: 3px solid #8B4513;
+    background: linear-gradient(135deg, #8B4513 0%, #A0522D 100%);
+    border: 3px solid #654321;
     border-radius: var(--radius-xl);
     padding: var(--spacing-xl);
     text-align: center;
@@ -1422,7 +1422,7 @@ p {
 .iso-badge:hover {
     transform: translateY(-4px);
     box-shadow: var(--shadow-xl);
-    border-color: #A0522D;
+    border-color: #5D4037;
 }
 
 .iso-badge a {
@@ -1481,24 +1481,33 @@ p {
 
 .iso-tests-list {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: var(--spacing-sm);
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--spacing-xs);
+    max-height: 200px;
+    overflow-y: auto;
+    padding: var(--spacing-sm);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    background: var(--surface-color);
 }
 
 .iso-test-item {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: var(--spacing-sm) var(--spacing-md);
-    background: var(--surface-color);
-    border-radius: var(--radius-md);
+    padding: var(--spacing-xs) var(--spacing-sm);
+    background: white;
+    border-radius: var(--radius-sm);
     border: 1px solid var(--border-color);
     transition: all var(--transition-fast);
+    font-size: var(--font-size-sm);
 }
 
 .iso-test-item:hover {
-    background: #fff8e1;
-    border-color: #ffd700;
+    background: #e8f5e8;
+    border-color: #4caf50;
+    box-shadow: 0 2px 8px rgba(76, 175, 80, 0.2);
+    transform: translateY(-1px);
 }
 
 .test-name {
@@ -1507,7 +1516,7 @@ p {
 }
 
 .iso-badge-small {
-    background: linear-gradient(135deg, #B85450 0%, #D2691E 100%);
+    background: linear-gradient(135deg, #8B4513 0%, #A0522D 100%);
     color: white;
     padding: var(--spacing-xs) var(--spacing-sm);
     border-radius: var(--radius-sm);
@@ -1515,8 +1524,8 @@ p {
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.5px;
-    border: 1px solid #8B4513;
-    box-shadow: 0 2px 4px rgba(184, 84, 80, 0.2);
+    border: 1px solid #654321;
+    box-shadow: 0 2px 4px rgba(139, 69, 19, 0.2);
 }
 
 .iso-info {
@@ -1524,7 +1533,7 @@ p {
     border-radius: var(--radius-lg);
     padding: var(--spacing-lg);
     margin-top: var(--spacing-xl);
-    border-left: 4px solid #B85450;
+    border-left: 4px solid #8B4513;
     box-shadow: var(--shadow-sm);
 }
 
@@ -1539,29 +1548,30 @@ p {
     margin: var(--spacing-lg) 0;
     padding: var(--spacing-lg);
     border-radius: var(--radius-md);
-    background: #fff3cd;
-    border: 1px solid #ffeaa7;
-    border-left: 4px solid #f39c12;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    border: 1px solid #dee2e6;
+    border-left: 4px solid #8B4513;
     position: relative;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
 .agronomist-note h4 {
     margin: 0 0 var(--spacing-sm) 0;
     font-size: var(--font-size-lg);
     font-weight: 600;
-    color: #856404;
+    color: #8B4513;
 }
 
 .agronomist-note p {
     margin: 0;
     font-size: var(--font-size-md);
     line-height: 1.5;
-    color: #856404;
+    color: #495057;
 }
 
 .agronomist-note .icon {
     margin-right: var(--spacing-sm);
-    color: #f39c12;
+    color: #8B4513;
 }
 
 /* Mobile Navigation */
@@ -2188,6 +2198,7 @@ p {
     
     .iso-tests-list {
         grid-template-columns: 1fr;
+        max-height: 150px;
     }
     
     .iso-test-item {
