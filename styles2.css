@@ -189,6 +189,7 @@ p {
     display: flex;
     align-items: center;
     gap: var(--spacing-md);
+    text-decoration: none;
 }
 
 .logo-image {
@@ -212,6 +213,12 @@ p {
     font-size: var(--font-size-sm);
     color: var(--text-secondary);
     font-weight: 400;
+}
+
+.logo:focus,
+.logo:active {
+    outline: none;
+    box-shadow: none;
 }
 
 .nav-list {
@@ -1759,6 +1766,52 @@ p {
 *:focus {
     outline: 2px solid var(--primary-color);
     outline-offset: 2px;
+}
+
+/* Subtle ISO highlight: replace badges with bold + asterisk */
+.iso-test-item .iso-badge-small {
+    display: none !important;
+}
+.iso-test-item:has(.iso-badge-small) .test-name {
+    font-weight: 700;
+}
+.iso-test-item:has(.iso-badge-small) .test-name::after {
+    content: ' *';
+    font-weight: 700;
+    color: inherit;
+    margin-left: 4px;
+}
+
+/* Generated package features (JS): hide mini ISO chip and apply same subtle style */
+.package-features li .iso-test-badge {
+    display: none !important;
+}
+.package-features li:has(.iso-test-badge) {
+    font-weight: 600;
+    color: var(--text-primary);
+}
+.package-features li:has(.iso-test-badge)::after {
+    content: ' *';
+    font-weight: 700;
+    margin-left: 4px;
+    color: inherit;
+}
+
+/* Legends explaining the asterisk */
+.test-packages::after {
+    content: '* denotes ISO-certified';
+    display: block;
+    margin-top: var(--spacing-sm);
+    color: var(--text-muted);
+    font-size: var(--font-size-xs);
+}
+
+.iso-tests-grid::after {
+    content: '* denotes ISO-certified';
+    display: block;
+    margin-top: var(--spacing-sm);
+    color: var(--text-muted);
+    font-size: var(--font-size-sm);
 }
 
 /* Test Selection Modal Styles */
