@@ -272,6 +272,65 @@ p {
     color: var(--text-primary);
     cursor: pointer;
     padding: var(--spacing-sm);
+    position: relative;
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: var(--radius-md);
+    transition: all var(--transition-fast);
+}
+
+/* Modern Hamburger Menu Animation */
+.mobile-menu-toggle .hamburger {
+    width: 24px;
+    height: 18px;
+    position: relative;
+    transform: rotate(0deg);
+    transition: 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+.mobile-menu-toggle .hamburger span {
+    display: block;
+    position: absolute;
+    height: 3px;
+    width: 100%;
+    background: currentColor;
+    border-radius: 2px;
+    opacity: 1;
+    left: 0;
+    transform: rotate(0deg);
+    transition: 0.25s ease-in-out;
+}
+
+.mobile-menu-toggle .hamburger span:nth-child(1) {
+    top: 0px;
+}
+
+.mobile-menu-toggle .hamburger span:nth-child(2) {
+    top: 7px;
+}
+
+.mobile-menu-toggle .hamburger span:nth-child(3) {
+    top: 14px;
+}
+
+/* Hamburger Animation when menu is active */
+.mobile-menu-toggle.active .hamburger span:nth-child(1) {
+    top: 7px;
+    transform: rotate(135deg);
+}
+
+.mobile-menu-toggle.active .hamburger span:nth-child(2) {
+    opacity: 0;
+    left: -60px;
+}
+
+.mobile-menu-toggle.active .hamburger span:nth-child(3) {
+    top: 7px;
+    transform: rotate(-135deg);
 }
 
 /* Hero Section */
@@ -1461,7 +1520,7 @@ p {
 .iso-tests-grid {
     margin: var(--spacing-2xl) 0;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
     gap: var(--spacing-2xl);
 }
 
@@ -1931,6 +1990,44 @@ p {
     .btn-large {
         padding: var(--spacing-lg) var(--spacing-xl);
         font-size: var(--font-size-lg);
+    }
+    
+    /* ISO Tests Grid Mobile Fixes */
+    .iso-tests-grid {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-lg);
+        margin: var(--spacing-lg) 0;
+    }
+    
+    .iso-category {
+        padding: var(--spacing-lg);
+    }
+    
+    .iso-category h3 {
+        font-size: var(--font-size-lg);
+        margin-bottom: var(--spacing-md);
+    }
+    
+    .iso-tests-list {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-xs);
+    }
+    
+    .iso-test-item {
+        padding: var(--spacing-sm);
+        flex-direction: column;
+        align-items: flex-start;
+        gap: var(--spacing-xs);
+    }
+    
+    .test-name {
+        font-size: var(--font-size-sm);
+        line-height: 1.4;
+    }
+    
+    .iso-badge-small {
+        font-size: 10px;
+        padding: 2px 6px;
     }
     
     /* Footer Improvements */

@@ -1912,8 +1912,10 @@ function updateBreadcrumb(items) {
 function toggleMobileMenu() {
     const nav = document.querySelector('.nav');
     const body = document.body;
+    const menuToggle = document.querySelector('.mobile-menu-toggle');
     
     nav.classList.toggle('mobile-active');
+    menuToggle.classList.toggle('active');
     
     // Prevent body scroll when menu is open
     if (nav.classList.contains('mobile-active')) {
@@ -1927,8 +1929,10 @@ function toggleMobileMenu() {
 function closeMobileMenu() {
     const nav = document.querySelector('.nav');
     const body = document.body;
-
+    const menuToggle = document.querySelector('.mobile-menu-toggle');
+    
     nav.classList.remove('mobile-active');
+    menuToggle.classList.remove('active');
     body.style.overflow = '';
 }
 
