@@ -2396,9 +2396,39 @@ This message was sent from the Motzz Laboratory website contact form.`;
 
 // Cart functionality removed - now using direct email quote requests
 
+// Scroll to Top functionality
+function scrollToTop() {
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
+}
+
+// Show/hide scroll to top button based on scroll position
+function toggleScrollToTopButton() {
+    const scrollButton = document.getElementById('scrollToTop');
+    if (!scrollButton) return;
+    
+    if (window.pageYOffset > 300) {
+        scrollButton.classList.add('visible');
+    } else {
+        scrollButton.classList.remove('visible');
+    }
+}
+
+// Initialize scroll to top functionality
+function initializeScrollToTop() {
+    // Add scroll event listener
+    window.addEventListener('scroll', toggleScrollToTopButton);
+    
+    // Initial check
+    toggleScrollToTopButton();
+}
+
 // Initialize lazy loading when DOM is ready
 document.addEventListener('DOMContentLoaded', function() {
     initializeWebsite();
     initializeEmailJS();
     initializeContactForm();
+    initializeScrollToTop();
 });
