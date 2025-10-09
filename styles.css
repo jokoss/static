@@ -1682,43 +1682,97 @@ p {
     display: block;
 }
 
-/* Mobile Menu */
+/* Mobile Menu - Slide from Right */
 .nav {
-    display: none;
+    position: fixed;
+    top: 0;
+    right: -300px;
+    width: 300px;
+    height: 100vh;
+    background: #ffffff;
+    z-index: 1000;
+    transition: right 0.3s ease;
+    box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
 }
 
 .nav.mobile-active {
-    position: fixed;
-    top: 0;
-    left: 0;
     right: 0;
-    bottom: 0;
-    background: #ffffff;
-    z-index: 1000;
-    display: block;
-    padding: 60px 20px 20px;
 }
 
-.nav.mobile-active .nav-list {
+.nav .mobile-menu-header {
+    padding: 20px;
+    border-bottom: 1px solid #eee;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.nav .mobile-menu-header .logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.nav .mobile-menu-header .logo-image {
+    width: 40px;
+    height: 40px;
+}
+
+.nav .mobile-menu-header .logo-text h1 {
+    font-size: 18px;
+    margin: 0;
+    color: #333;
+}
+
+.nav .mobile-menu-header .logo-text .tagline {
+    font-size: 12px;
+    color: #666;
+    margin: 0;
+}
+
+.nav .mobile-menu-close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: none;
+    border: none;
+    font-size: 24px;
+    color: #666;
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.nav .mobile-menu-close:hover {
+    color: #333;
+}
+
+.nav .nav-list {
     list-style: none;
     padding: 0;
     margin: 0;
 }
 
-.nav.mobile-active .nav-link {
+.nav .nav-link {
     display: block;
-    padding: 12px 0;
+    padding: 15px 20px;
     font-size: 16px;
     color: #333;
     text-decoration: none;
-    border-bottom: 1px solid #ddd;
+    border-bottom: 1px solid #f0f0f0;
+    transition: background-color 0.2s ease;
 }
 
-.nav.mobile-active .nav-link:hover {
+.nav .nav-link:hover {
+    background-color: #f8f9fa;
     color: #007bff;
 }
 
-.nav.mobile-active .nav-link.active {
+.nav .nav-link.active {
+    background-color: #e3f2fd;
     color: #007bff;
     font-weight: 600;
 }
