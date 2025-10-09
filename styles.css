@@ -1705,12 +1705,12 @@ p {
 .nav {
     position: fixed;
     top: 0;
-    right: -100%;
+    right: -280px;
     width: 280px;
     height: 100vh;
     background: #fff;
     z-index: 1000;
-    transition: right 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: right 0.3s ease;
     box-shadow: -4px 0 20px rgba(0, 0, 0, 0.15);
     overflow-y: auto;
 }
@@ -1721,8 +1721,8 @@ p {
 
 /* Menu Header */
 .nav .menu-header {
-    padding: 20px;
-    background: #f8f9fa;
+    padding: 15px;
+    background: #fff;
     border-bottom: 1px solid #e9ecef;
     position: relative;
 }
@@ -1730,51 +1730,52 @@ p {
 .nav .menu-header .logo {
     display: flex;
     align-items: center;
-    gap: 12px;
+    gap: 10px;
+    margin-right: 40px;
 }
 
 .nav .menu-header .logo-image {
-    width: 36px;
-    height: 36px;
-    border-radius: 6px;
+    width: 30px;
+    height: 30px;
+    border-radius: 4px;
 }
 
 .nav .menu-header .logo-text h1 {
-    font-size: 16px;
+    font-size: 14px;
     font-weight: 600;
     margin: 0;
-    color: #212529;
+    color: #333;
     line-height: 1.2;
 }
 
 .nav .menu-header .logo-text .tagline {
-    font-size: 11px;
-    color: #6c757d;
+    font-size: 10px;
+    color: #666;
     margin: 0;
     line-height: 1.2;
 }
 
 .nav .menu-close {
     position: absolute;
-    top: 16px;
-    right: 16px;
-    width: 32px;
-    height: 32px;
+    top: 12px;
+    right: 12px;
+    width: 28px;
+    height: 28px;
     background: none;
     border: none;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #6c757d;
-    font-size: 18px;
+    color: #666;
+    font-size: 16px;
     cursor: pointer;
     transition: all 0.2s ease;
 }
 
 .nav .menu-close:hover {
-    background: #e9ecef;
-    color: #495057;
+    background: #f0f0f0;
+    color: #333;
 }
 
 /* Navigation List */
@@ -1786,27 +1787,27 @@ p {
 
 .nav .nav-link {
     display: block;
-    padding: 16px 20px;
-    font-size: 15px;
+    padding: 12px 15px;
+    font-size: 14px;
     font-weight: 500;
-    color: #495057;
+    color: #333;
     text-decoration: none;
-    border-bottom: 1px solid #f1f3f4;
+    border-bottom: 1px solid #f0f0f0;
     transition: all 0.2s ease;
     position: relative;
 }
 
 .nav .nav-link:hover {
-    background: #f8f9fa;
-    color: #007bff;
-    padding-left: 24px;
+    background: #f8f8f8;
+    color: #2c3e50;
+    padding-left: 18px;
 }
 
 .nav .nav-link.active {
-    background: #e3f2fd;
-    color: #007bff;
+    background: #f0f8ff;
+    color: #2c3e50;
     font-weight: 600;
-    border-left: 3px solid #007bff;
+    border-left: 3px solid #2c3e50;
 }
 
 .nav .nav-link.active::before {
@@ -1816,7 +1817,7 @@ p {
     top: 0;
     bottom: 0;
     width: 3px;
-    background: #007bff;
+    background: #2c3e50;
 }
 
 /* Responsive Design */
