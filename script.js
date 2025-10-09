@@ -1911,10 +1911,12 @@ function updateBreadcrumb(items) {
 // Mobile menu functionality
 function toggleMobileMenu() {
     const nav = document.querySelector('.nav');
+    const overlay = document.querySelector('.mobile-menu-overlay');
     const body = document.body;
     const menuToggle = document.querySelector('.mobile-menu-toggle');
     
     nav.classList.toggle('mobile-active');
+    overlay.classList.toggle('active');
     menuToggle.classList.toggle('active');
     
     // Prevent body scroll when menu is open
@@ -1928,10 +1930,12 @@ function toggleMobileMenu() {
 // Close mobile menu when clicking on a link
 function closeMobileMenu() {
     const nav = document.querySelector('.nav');
+    const overlay = document.querySelector('.mobile-menu-overlay');
     const body = document.body;
     const menuToggle = document.querySelector('.mobile-menu-toggle');
     
     nav.classList.remove('mobile-active');
+    overlay.classList.remove('active');
     menuToggle.classList.remove('active');
     body.style.overflow = '';
 }
