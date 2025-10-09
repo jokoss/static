@@ -1661,7 +1661,7 @@ p {
     }
     
     .logo-image {
-        height: 35px;
+        height: 45px;
     }
     
     .logo-text h1 {
@@ -1669,7 +1669,7 @@ p {
     }
     
     .logo-text .tagline {
-        font-size: var(--font-size-xs);
+        font-size: 12px;
     }
     
     .nav {
@@ -1692,8 +1692,9 @@ p {
     }
     
     .header-actions .btn {
-        padding: var(--spacing-sm) var(--spacing-md);
-        font-size: var(--font-size-sm);
+        padding: var(--spacing-xs) var(--spacing-sm);
+        font-size: 11px;
+        min-height: 32px;
     }
     
     /* Hero Section Improvements */
@@ -2886,8 +2887,10 @@ p {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: var(--spacing-2xl);
+    padding: var(--spacing-lg);
     animation: slideInFromTop 0.3s ease-out;
+    overflow-y: auto;
+    box-sizing: border-box;
 }
 
 @keyframes slideInFromTop {
@@ -2903,18 +2906,21 @@ p {
 
 .nav.mobile-active .nav-list {
     flex-direction: column;
-    gap: var(--spacing-lg);
+    gap: var(--spacing-sm);
     text-align: center;
     list-style: none;
     padding: 0;
     margin: 0;
+    width: 100%;
+    max-width: 300px;
+    box-sizing: border-box;
 }
 
 .nav.mobile-active .nav-link {
     display: block;
-    font-size: var(--font-size-lg);
+    font-size: var(--font-size-base);
     font-weight: 600;
-    padding: var(--spacing-md) var(--spacing-lg);
+    padding: var(--spacing-sm) var(--spacing-md);
     border-radius: var(--radius-md);
     transition: all var(--transition-normal);
     text-decoration: none;
@@ -2923,6 +2929,10 @@ p {
     display: flex;
     align-items: center;
     justify-content: center;
+    text-align: center;
+    word-wrap: break-word;
+    max-width: 100%;
+    box-sizing: border-box;
 }
 
 .nav.mobile-active .nav-link:hover,
