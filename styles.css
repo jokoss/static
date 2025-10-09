@@ -275,7 +275,6 @@ p {
     position: relative;
     width: 44px;
     height: 44px;
-    display: flex;
     align-items: center;
     justify-content: center;
     border-radius: var(--radius-md);
@@ -1520,8 +1519,10 @@ p {
 .iso-tests-grid {
     margin: var(--spacing-2xl) 0;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: var(--spacing-2xl);
+    max-width: 100%;
+    overflow: hidden;
 }
 
 .iso-category {
@@ -1819,7 +1820,7 @@ p {
     }
     
     .mobile-menu-toggle {
-        display: block;
+        display: flex;
         padding: var(--spacing-sm);
         border-radius: var(--radius-md);
         transition: all var(--transition-fast);
@@ -1829,7 +1830,6 @@ p {
         font-size: var(--font-size-lg);
         min-width: 44px;
         min-height: 44px;
-        display: flex;
         align-items: center;
         justify-content: center;
     }
@@ -2222,9 +2222,11 @@ p {
     
     /* ISO Tests Grid Mobile Fixes */
     .iso-tests-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr !important;
         gap: var(--spacing-lg);
         margin: var(--spacing-lg) 0;
+        max-width: 100%;
+        overflow: hidden;
     }
     
     .iso-category {
@@ -2279,6 +2281,19 @@ p {
     .footer-section li {
         font-size: var(--font-size-sm);
         line-height: 1.5;
+    }
+}
+
+@media (max-width: 600px) {
+    /* Small Mobile Devices */
+    .iso-tests-grid {
+        grid-template-columns: 1fr !important;
+        gap: var(--spacing-md);
+        margin: var(--spacing-md) 0;
+    }
+    
+    .iso-category {
+        padding: var(--spacing-md);
     }
 }
 
