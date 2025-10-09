@@ -1698,7 +1698,7 @@ p {
     align-items: center;
     padding: var(--spacing-lg);
     animation: slideInFromTop 0.3s ease-out;
-    overflow-y: auto;
+    overflow: hidden;
     box-sizing: border-box;
 }
 
@@ -1715,14 +1715,15 @@ p {
 
 .nav.mobile-active .nav-list {
     flex-direction: column;
-    gap: var(--spacing-sm);
+    gap: var(--spacing-xs);
     text-align: center;
     list-style: none;
     padding: 0;
     margin: 0;
     width: 100%;
-    max-width: 300px;
+    max-width: 280px;
     box-sizing: border-box;
+    flex-shrink: 0;
 }
 
 .nav.mobile-active .nav-link {
@@ -1788,7 +1789,7 @@ p {
     }
     
     .logo-image {
-        height: 45px;
+        height: 55px;
         flex-shrink: 0;
     }
     
@@ -1798,7 +1799,7 @@ p {
     }
     
     .logo-text h1 {
-        font-size: var(--font-size-lg);
+        font-size: var(--font-size-xl);
         line-height: 1.2;
         margin: 0;
         white-space: nowrap;
@@ -1807,7 +1808,7 @@ p {
     }
     
     .logo-text .tagline {
-        font-size: 12px;
+        font-size: 14px;
         line-height: 1.2;
         margin: 0;
         white-space: nowrap;
@@ -2218,6 +2219,18 @@ p {
     .btn-large {
         padding: var(--spacing-lg) var(--spacing-xl);
         font-size: var(--font-size-lg);
+    }
+    
+    /* Leadership CTA Mobile Fixes */
+    .leadership-cta .btn {
+        width: 100%;
+        max-width: 100%;
+        padding: var(--spacing-md) var(--spacing-lg);
+        font-size: var(--font-size-base);
+        white-space: normal;
+        line-height: 1.4;
+        word-wrap: break-word;
+        box-sizing: border-box;
     }
     
     /* ISO Tests Grid Mobile Fixes */
