@@ -3000,22 +3000,21 @@ p {
     color: white;
 }
 
-/* Mobile Menu - Hidden by default */
+/* Mobile Menu */
 .nav {
     display: none;
 }
 
-/* Mobile Menu - Show when active */
 .nav.mobile-active {
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    background: white;
+    background: #ffffff;
     z-index: 1000;
     display: block;
-    padding: 20px;
+    padding: 60px 20px 20px;
 }
 
 .nav.mobile-active .nav-list {
@@ -3026,19 +3025,19 @@ p {
 
 .nav.mobile-active .nav-link {
     display: block;
-    padding: 15px 0;
-    font-size: 18px;
+    padding: 12px 0;
+    font-size: 16px;
     color: #333;
     text-decoration: none;
-    border-bottom: 1px solid #eee;
+    border-bottom: 1px solid #ddd;
 }
 
 .nav.mobile-active .nav-link:hover {
-    color: var(--primary-color);
+    color: #007bff;
 }
 
 .nav.mobile-active .nav-link.active {
-    color: var(--primary-color);
+    color: #007bff;
     font-weight: 600;
 }
 
