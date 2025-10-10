@@ -642,6 +642,24 @@ p {
     font-size: var(--font-size-lg);
 }
 
+/* Service Header - Icon and Title in same row */
+.service-header {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+    margin-bottom: var(--spacing-sm);
+}
+
+.service-header .service-icon {
+    flex-shrink: 0;
+    margin-bottom: 0;
+}
+
+.service-header .service-title {
+    margin-bottom: 0;
+    flex: 1;
+}
+
 .service-content {
     flex: 1;
     display: flex;
@@ -1922,6 +1940,18 @@ p {
     
     .service-card h3 {
         font-size: var(--font-size-lg);
+    }
+    
+    /* Service Header - Mobile */
+    .service-header {
+        gap: var(--spacing-sm);
+        margin-bottom: var(--spacing-xs);
+    }
+    
+    .service-header .service-icon {
+        width: 40px;
+        height: 40px;
+        font-size: var(--font-size-base);
     }
     
     /* Category Images - Mobile */

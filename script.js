@@ -997,11 +997,13 @@ function displayServices(data, filteredData = null) {
         
         html += `
             <div class="service-card" data-category="${categoryKey}">
-                <div class="service-icon">
-                    <i class="${category.icon}"></i>
+                <div class="service-header">
+                    <div class="service-icon">
+                        <i class="${category.icon}"></i>
+                    </div>
+                    <h3 class="service-title">${category.name}</h3>
                 </div>
                 <div class="service-content">
-                    <h3 class="service-title">${category.name}</h3>
                     <div class="service-image" onclick="viewCategoryDetails('${categoryKey}')">
                         <img src="${category.image}" alt="${category.name}" class="category-image">
                     </div>
