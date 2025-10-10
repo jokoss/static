@@ -1647,16 +1647,7 @@ p {
     padding: var(--spacing-xl);
 }
 
-.nav.mobile-active .nav-list {
-    flex-direction: column;
-    gap: var(--spacing-xl);
-    text-align: center;
-}
-
-.nav.mobile-active .nav-link {
-    font-size: var(--font-size-xl);
-    padding: var(--spacing-md);
-}
+/* Mobile menu styles moved to more specific section below */
 
 .mobile-menu-close {
     display: none;
@@ -1778,14 +1769,17 @@ p {
     color: #333;
 }
 
-/* Navigation List */
-.nav .nav-list {
+/* Mobile Navigation List - Only applies to mobile menu */
+.nav.mobile-active .nav-list {
     list-style: none;
     padding: 0;
     margin: 0;
+    flex-direction: column;
+    gap: var(--spacing-xl);
+    text-align: center;
 }
 
-.nav .nav-link {
+.nav.mobile-active .nav-link {
     display: block;
     padding: 12px 15px;
     font-size: 14px;
@@ -1797,20 +1791,20 @@ p {
     position: relative;
 }
 
-.nav .nav-link:hover {
+.nav.mobile-active .nav-link:hover {
     background: #f8f8f8;
     color: #2c3e50;
     padding-left: 18px;
 }
 
-.nav .nav-link.active {
+.nav.mobile-active .nav-link.active {
     background: #f0f8ff;
     color: #2c3e50;
     font-weight: 600;
     border-left: 3px solid #2c3e50;
 }
 
-.nav .nav-link.active::before {
+.nav.mobile-active .nav-link.active::before {
     content: '';
     position: absolute;
     left: 0;
