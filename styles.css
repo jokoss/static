@@ -1663,13 +1663,26 @@ p {
     display: flex;
 }
 
+/* Ensure mobile menu is hidden on desktop */
+@media (min-width: 769px) {
+    .nav {
+        display: none !important;
+        visibility: hidden !important;
+        opacity: 0 !important;
+    }
+}
+
 /* Mobile Navigation */
 .nav {
-    display: none;
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
 }
 
 .nav.mobile-active {
-    display: flex;
+    display: flex !important;
+    visibility: visible !important;
+    opacity: 1 !important;
     position: fixed;
     top: 0;
     right: 0;
