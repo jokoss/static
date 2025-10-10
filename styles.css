@@ -566,7 +566,7 @@ p {
 
 .services-container {
     display: grid;
-    gap: var(--spacing-xl);
+    gap: var(--spacing-md);
 }
 
 .services-container.grid-view {
