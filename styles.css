@@ -1631,7 +1631,16 @@ p {
     color: #f39c12;
 }
 
+/* Desktop Navigation */
+.desktop-nav {
+    display: flex;
+}
+
 /* Mobile Navigation */
+.nav {
+    display: none;
+}
+
 .nav.mobile-active {
     display: flex;
     position: fixed;
@@ -1871,6 +1880,10 @@ p {
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
+    }
+    
+    .desktop-nav {
+        display: none;
     }
     
     .nav {
