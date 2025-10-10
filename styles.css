@@ -1703,28 +1703,28 @@ p {
 
 /* Mobile Menu Drawer - positioning handled by .nav.mobile-active above */
 
-/* Menu Header */
-.nav .menu-header {
+/* Menu Header - Only applies when mobile menu is active */
+.nav.mobile-active .menu-header {
     padding: 15px;
     background: #fff;
     border-bottom: 1px solid #e9ecef;
     position: relative;
 }
 
-.nav .menu-header .logo {
+.nav.mobile-active .menu-header .logo {
     display: flex;
     align-items: center;
     gap: 10px;
     margin-right: 40px;
 }
 
-.nav .menu-header .logo-image {
+.nav.mobile-active .menu-header .logo-image {
     width: 30px;
     height: 30px;
     border-radius: 4px;
 }
 
-.nav .menu-header .logo-text h1 {
+.nav.mobile-active .menu-header .logo-text h1 {
     font-size: 14px;
     font-weight: 600;
     margin: 0;
@@ -1732,14 +1732,14 @@ p {
     line-height: 1.2;
 }
 
-.nav .menu-header .logo-text .tagline {
+.nav.mobile-active .menu-header .logo-text .tagline {
     font-size: 10px;
     color: #666;
     margin: 0;
     line-height: 1.2;
 }
 
-.nav .menu-close {
+.nav.mobile-active .menu-close {
     position: absolute;
     top: 12px;
     right: 12px;
@@ -1757,7 +1757,7 @@ p {
     transition: all 0.2s ease;
 }
 
-.nav .menu-close:hover {
+.nav.mobile-active .menu-close:hover {
     background: #f0f0f0;
     color: #333;
 }
