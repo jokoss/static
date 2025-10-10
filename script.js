@@ -1962,6 +1962,21 @@ function closeMobileMenu() {
 
 // Event listeners setup
 function setupEventListeners() {
+    // Logo click handler - reset to services root page
+    document.querySelectorAll('.logo').forEach(logo => {
+        logo.addEventListener('click', function(e) {
+            e.preventDefault();
+            loadServices();
+            // Update breadcrumb to reset navigation state
+            updateBreadcrumb([{ name: 'Services' }]);
+            // Scroll to top of services section
+            const servicesSection = document.getElementById('services');
+            if (servicesSection) {
+                servicesSection.scrollIntoView({ behavior: 'smooth' });
+            }
+        });
+    });
+    
     // Smooth scrolling for navigation links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function(e) {
