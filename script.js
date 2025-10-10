@@ -987,7 +987,7 @@ function displayServices(data, filteredData = null) {
                 </div>
                 <div class="service-content">
                     <h3 class="service-title">${category.name}</h3>
-                    <div class="service-image">
+                    <div class="service-image" onclick="viewCategoryDetails('${categoryKey}')">
                         <img src="${category.image}" alt="${category.name}" class="category-image">
                     </div>
                     <div class="service-meta">
