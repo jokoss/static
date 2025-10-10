@@ -650,6 +650,33 @@ p {
     min-height: 0;
 }
 
+/* Category Images */
+.service-image {
+    margin: var(--spacing-sm) 0;
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border: 2px solid var(--primary-color);
+    transition: all var(--transition-normal);
+}
+
+.category-image {
+    width: 100%;
+    height: 120px;
+    object-fit: cover;
+    object-position: center;
+    transition: transform var(--transition-normal);
+}
+
+.service-card:hover .service-image {
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+    border-color: var(--secondary-color);
+}
+
+.service-card:hover .category-image {
+    transform: scale(1.05);
+}
+
 .service-title {
     font-size: var(--font-size-xl);
     font-weight: 600;
@@ -2156,6 +2183,16 @@ p {
         margin-bottom: var(--spacing-md);
     }
     
+    /* Category Images - Mobile */
+    .category-image {
+        height: 100px;
+    }
+    
+    .service-image {
+        margin: var(--spacing-xs) 0;
+        border-width: 1px;
+    }
+    
     .service-card .btn {
         width: 100%;
         padding: var(--spacing-sm) var(--spacing-md);
@@ -2482,6 +2519,16 @@ p {
     .service-card p {
         font-size: 12px;
         line-height: 1.4;
+    }
+    
+    /* Category Images - Small Mobile */
+    .category-image {
+        height: 80px;
+    }
+    
+    .service-image {
+        margin: var(--spacing-xs) 0;
+        border-width: 1px;
     }
     
     /* About Section for Small Mobile */

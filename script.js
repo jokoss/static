@@ -13,7 +13,7 @@ let debounceTimer = null;
 const testData = {
     agriculture: {
         name: 'Agriculture',
-        description: 'Comprehensive testing services for soil, plant, water, compost/mulch and fertilizer. We provide services to most of the farms, golf courses, and nurseries in Arizona and some parts of Nevada and California.',
+        image: 'img/agriculture.jpg',
         icon: 'fas fa-seedling',
         subcategories: [
             {
@@ -400,7 +400,7 @@ const testData = {
     },
     environmental: {
         name: 'Environmental',
-        description: 'Environmental testing services for water quality, waste management, and environmental compliance.',
+        image: 'img/environmental.jpg',
         icon: 'fas fa-globe-americas',
         subcategories: [
             {
@@ -484,7 +484,7 @@ const testData = {
     },
     construction: {
         name: 'Construction',
-        description: 'Construction materials testing for soil and aggregates analysis.',
+        image: 'img/construction-materials.jpg',
         icon: 'fas fa-hard-hat',
         subcategories: [
             {
@@ -545,7 +545,7 @@ const testData = {
     },
     dietary: {
         name: 'Dietary Supplements',
-        description: 'Dietary supplement testing for minerals, contaminants, and heavy metals.',
+        image: 'img/neutraceutical.jpg',
         icon: 'fas fa-pills',
         subcategories: [
             {
@@ -606,7 +606,7 @@ const testData = {
     },
     water: {
         name: 'Water',
-        description: 'Comprehensive water testing services for irrigation, drinking water, and wastewater analysis.',
+        image: 'img/environmental.jpg',
         icon: 'fas fa-tint',
         subcategories: [
             {
@@ -792,7 +792,7 @@ const testData = {
     },
     microbiology: {
         name: 'Microbiology',
-        description: 'Comprehensive microbiology testing services for pathogens and microbial contaminants.',
+        image: 'img/microbiology.jpg',
         icon: 'fas fa-microscope',
         subcategories: [
             {
@@ -987,7 +987,9 @@ function displayServices(data, filteredData = null) {
                 </div>
                 <div class="service-content">
                     <h3 class="service-title">${category.name}</h3>
-                    <p class="service-description">${category.description}</p>
+                    <div class="service-image">
+                        <img src="${category.image}" alt="${category.name}" class="category-image">
+                    </div>
                     <div class="service-meta">
                         <div class="meta-item">
                             <i class="fas fa-layer-group"></i>
