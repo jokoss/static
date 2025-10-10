@@ -920,6 +920,18 @@ const testData = {
     }
 };
 
+// Hide mobile menu on desktop screens
+function hideMobileMenuOnDesktop() {
+    if (window.innerWidth > 768) {
+        const nav = document.querySelector('.nav');
+        if (nav) {
+            nav.style.display = 'none';
+            nav.style.visibility = 'hidden';
+            nav.style.opacity = '0';
+        }
+    }
+}
+
 // Initialize the website
 function initializeWebsite() {
     loadServices();
@@ -930,6 +942,9 @@ function initializeWebsite() {
     
     // Set initial active navigation state
     updateActiveNavLink();
+    
+    // Hide mobile menu on desktop
+    hideMobileMenuOnDesktop();
 }
 
 // Initialize EmailJS
@@ -2442,3 +2457,7 @@ document.addEventListener('DOMContentLoaded', function() {
     initializeContactForm();
     initializeScrollToTop();
 });
+
+// Hide mobile menu on desktop - call on page load and resize
+window.addEventListener('load', hideMobileMenuOnDesktop);
+window.addEventListener('resize', hideMobileMenuOnDesktop);
